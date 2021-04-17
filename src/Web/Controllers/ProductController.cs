@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using ResultFilters.Application.Requests;
+using ResultFilters.Application.Commands;
 using ResultFilters.Core;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -22,7 +22,7 @@ namespace ResultFilters.Web.Controllers
         [ProducesResponseType(typeof(ApiResponse<string>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Post([FromBody] AddProductRequest request)
+        public async Task<IActionResult> Post([FromBody] AddProductCommand request)
         {
             ApiResponse<string> response = await _mediator.Send(request);
 

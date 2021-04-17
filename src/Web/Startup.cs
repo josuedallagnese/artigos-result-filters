@@ -17,7 +17,7 @@ namespace ResultFilters.Web
 
             services.AddSwaggerGen(options =>
             {
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "FailFast.Web.xml"));
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "ResultFilters.Web.xml"));
             });
 
             services.AddScoped<ResponseResultFilter>();

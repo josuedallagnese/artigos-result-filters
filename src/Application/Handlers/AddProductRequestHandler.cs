@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using ResultFilters.Application.Requests;
+using ResultFilters.Application.Commands;
 using ResultFilters.Core;
 using MediatR;
 
 namespace ResultFilters.Application.Handlers
 {
-    public class AddProductRequestHandler : IRequestHandler<AddProductRequest, ApiResponse<string>>
+    public class AddProductRequestHandler : IRequestHandler<AddProductCommand, ApiResponse<string>>
     {
-        public async Task<ApiResponse<string>> Handle(AddProductRequest request, CancellationToken cancellationToken)
+        public async Task<ApiResponse<string>> Handle(AddProductCommand request, CancellationToken cancellationToken)
         {
             var response = new ApiResponse<string>();
 

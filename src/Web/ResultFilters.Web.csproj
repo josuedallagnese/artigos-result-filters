@@ -6,7 +6,7 @@
 
   <PropertyGroup>
     <NoWarn>1701;1702;1705;1591</NoWarn>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\FailFast.Web.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\ResultFilters.Web.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
