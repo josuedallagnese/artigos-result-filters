@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using ResultFilters.Core.Exceptions;
 using MediatR;
+using System.Collections.Generic;
 
 namespace ResultFilters.Core.MediatR
 {
@@ -35,5 +36,11 @@ namespace ResultFilters.Core.MediatR
 
         public Task Publish<TNotification>(TNotification notification, CancellationToken cancellationToken = default) where TNotification : INotification
             => _innerMediator.Publish(notification, cancellationToken);
+
+        public IAsyncEnumerable<TResponse> CreateStream<TResponse>(IStreamRequest<TResponse> request, CancellationToken cancellationToken = default)
+            => _innerMediator.CreateStream(request, cancellationToken);
+
+        public IAsyncEnumerable<object> CreateStream(object request, CancellationToken cancellationToken = default)
+            => _innerMediator.CreateStream(request, cancellationToken);
     }
 }
